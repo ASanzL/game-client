@@ -26,7 +26,7 @@ function create() {
   createMap(this);
   this.input.setPollAlways();
     var self = this;
-    this.socket = io('http://127.0.0.1:3000');
+    this.socket = io('https://game-server-sanz.herokuapp.com');
     this.otherPlayers = this.add.group();
     this.socket.on('currentPlayers', function (players) {
       Object.keys(players).forEach(function (id) {
