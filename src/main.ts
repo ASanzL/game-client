@@ -1,4 +1,5 @@
 var config = {
+  // @ts-ignore
     type: Phaser.AUTO,
     width: 1280,
     height: 720,
@@ -8,11 +9,12 @@ var config = {
         update: update
     }
 };
+  // @ts-ignore
 var game = new Phaser.Game(config);
 var inputKeys;
 var player;
-let playerVelocity = { x: 0, y: 0 };
-let playerSpeed = 4;
+var playerVelocity = { x: 0, y: 0 };
+var playerSpeed = 4;
 
 function preload() {
     this.load.image('player', 'assets/player.png');
@@ -26,6 +28,7 @@ function create() {
   createMap(this);
   this.input.setPollAlways();
     var self = this;
+      // @ts-ignore
     this.socket = io('https://game-server-sanz.herokuapp.com');
     this.otherPlayers = this.add.group();
     this.socket.on('currentPlayers', function (players) {
@@ -55,10 +58,14 @@ function create() {
             otherPlayer.setRotation(playerInfo.rotation);
           }
         });
-	});
-	this.wKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-	this.aKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-	this.sKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+  });
+  // @ts-ignore
+  this.wKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+  // @ts-ignore
+  this.aKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+  // @ts-ignore
+  this.sKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+  // @ts-ignore
 	this.dKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 }
 
