@@ -3,7 +3,7 @@
         "module": "system",
         "removeComments": true,
         "preserveConstEnums": true,
-        "outDir": "./dist",
+        "outDir": "./",
         "sourceMap": true
     },
     "include": [
@@ -12,5 +12,5 @@
     "exclude": [
         "node_modules",
         "**/*.spec.ts"
-    ],
+    ]
 }
